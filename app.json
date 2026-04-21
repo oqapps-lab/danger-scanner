@@ -4,27 +4,23 @@
     "slug": "danger-scanner",
     "version": "0.1.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
     "scheme": "dangerscanner",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "backgroundColor": "#F7F7F4",
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.gazetastreet.dangerscanner"
     },
     "android": {
-      "package": "com.gazetastreet.dangerscanner",
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "package": "com.gazetastreet.dangerscanner"
     },
     "plugins": [
       "expo-router",
-      "expo-haptics"
+      "expo-font"
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": false
     }
   }
 }
