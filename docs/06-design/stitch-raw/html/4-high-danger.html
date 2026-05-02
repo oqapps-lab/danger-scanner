@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Result Screen (High Alert) - Danger Scanner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#071325",
+                        "tertiary": "#ffbbb5",
+                        "on-secondary": "#492900",
+                        "surface-tint": "#3adfab",
+                        "secondary-fixed-dim": "#ffb86b",
+                        "inverse-surface": "#d7e3fc",
+                        "tertiary-container": "#ff9289",
+                        "primary-fixed": "#60fcc6",
+                        "secondary": "#ffb86b",
+                        "primary": "#42e5b0",
+                        "on-tertiary-fixed": "#410003",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#3c4a43",
+                        "surface-variant": "#2a3548",
+                        "on-background": "#d7e3fc",
+                        "background": "#071325",
+                        "surface-container": "#142032",
+                        "primary-fixed-dim": "#3adfab",
+                        "inverse-on-surface": "#253144",
+                        "outline": "#85948c",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#030e20",
+                        "tertiary-fixed": "#ffdad6",
+                        "on-surface-variant": "#bbcac1",
+                        "secondary-container": "#cf7e02",
+                        "surface-container-low": "#101c2e",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#002116",
+                        "on-surface": "#d7e3fc",
+                        "on-primary-fixed-variant": "#00513b",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "on-primary": "#003828",
+                        "surface-container-high": "#1f2a3d",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#006c4f",
+                        "on-tertiary": "#680009",
+                        "on-primary-container": "#004d38",
+                        "primary-container": "#00c896",
+                        "on-tertiary-container": "#8c0010",
+                        "secondary-fixed": "#ffdcbc",
+                        "on-secondary-fixed-variant": "#683d00",
+                        "surface-bright": "#2e394d",
+                        "on-secondary-fixed": "#2c1700",
+                        "on-secondary-container": "#3f2300",
+                        "surface-container-highest": "#2a3548",
+                        "surface-dim": "#071325",
+                        "on-tertiary-fixed-variant": "#930011"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="bg-slate-900/60 backdrop-blur-xl shadow-[0_0_20px_rgba(66,229,176,0.05)] flex justify-between items-center px-6 h-16 w-full fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<span aria-hidden="true" class="material-symbols-outlined text-[#42e5b0]">biotech</span>
+<span class="text-xl font-black tracking-widest text-[#42e5b0] font-['Manrope'] tracking-tight">DANGER SCANNER</span>
+</div>
+<div class="h-8 w-8 rounded-full bg-surface-container overflow-hidden ring-2 ring-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close up portrait of user looking at camera with neutral lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyvkA_xAv5vpDPsFK9JsNSdglM4bD9VbVyvwta2SOLEixXnTtolFAEcZ0Tm2ZGcstuUhyTkV7daa6fl93_WS3Rpl-tieuyL-_DLtD5gudF1-S9nLi7WYTCgEUduMAiVrt5ksMme2q2ZrKg_7oHHX5US-Q7Ymifns8j49rMzWDsS6VjjFoRrjIWe64rRbHNvo1eDD1wfowBUKsg3PtVTmhrTf1-2kYz08fJxWyQjxWP8JskqgU7FXbNGY0YNg6tLIuJv4fSujBFXg"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-16 pb-24 px-4 pt-6 space-y-6 max-w-2xl mx-auto w-full">
+<!-- Scan Photo Thumbnail -->
+<div class="relative w-full h-64 rounded-xl overflow-hidden bg-surface-container-lowest">
+<img alt="Scanned Subject" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" data-alt="close up photo of an eastern copperhead snake on dry leaves in a forest setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-hyv3jeJWGjLptN9286RW0XhcAvEGiHb7o4U0qrlfn4jkMyqEG2l3hXtgkOE8Xr8GC0MHoR3aes022ZZieHIXeh6DFajA4ZmFBDRBltJAcF99Mj1W0PIooF9pm7GCciFdLclyKRYP01kh2ovoTXEqiML9ME5LpG9tmzfYDNI5S5rZ4TDGJkNZwjWV8P5qS5vPLYiRMyazeRhsZL0tzHKiwg8RiLOXbR-3ZU3eAyuUmK9Rk72FxAuWJhQJmnPFAa5ET5F4MGxOFw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<!-- Danger Reticle -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-32 h-32 border-2 border-error/50 rounded-full flex items-center justify-center animate-[pulse_2s_ease-in-out_infinite]">
+<div class="w-24 h-24 border border-error/30 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-error text-4xl drop-shadow-[0_0_8px_rgba(255,180,171,0.5)]">warning</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Danger Badge -->
+<div class="bg-[#C1121F] rounded-xl p-5 flex flex-col items-center justify-center text-center shadow-[0_0_32px_rgba(193,18,31,0.15)] relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
+<span class="font-headline font-bold text-white text-2xl tracking-tight mb-1 relative z-10">Eastern Copperhead</span>
+<div class="flex items-center gap-2 relative z-10">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+<span class="font-body font-medium text-white/90 text-sm tracking-wider uppercase">82% confidence</span>
+</div>
+</div>
+<!-- Emergency CTA -->
+<a class="block w-full bg-error-container hover:bg-error-container/90 transition-colors rounded-xl p-6 flex flex-col items-center justify-center text-center border border-error/20 relative overflow-hidden group" href="tel:911">
+<div class="absolute inset-0 bg-gradient-to-br from-error/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-on-error-container text-4xl mb-2" data-weight="fill">emergency</span>
+<h2 class="font-headline font-extrabold text-on-error-container text-xl md:text-2xl tracking-tight uppercase">IF BITTEN — CALL 911 IMMEDIATELY</h2>
+<p class="font-body text-on-error-container/80 text-sm mt-2">Tap to call emergency services</p>
+</a>
+<!-- Scrollable Action Card -->
+<div class="bg-surface-container rounded-xl p-1 overflow-hidden">
+<div class="bg-surface-container-highest rounded-lg p-5">
+<h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">medical_services</span>
+                    First Aid Protocols
+                </h3>
+<div class="space-y-6">
+<!-- Section 1 -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-0 before:w-px before:bg-outline-variant/30">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-low border border-primary/30 flex items-center justify-center z-10">
+<span class="text-primary text-[10px] font-bold">1</span>
+</div>
+<h4 class="font-body font-semibold text-on-surface mb-2">Immediate steps</h4>
+<ul class="space-y-3 font-body text-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary mt-0.5">check_circle</span>
+<span>Keep the victim calm and still to slow the spread of venom.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary mt-0.5">check_circle</span>
+<span>Remove rings, watches, or restrictive clothing near the bite area.</span>
+</li>
+</ul>
+</div>
+<!-- Section 2 -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-[11px] before:top-2 before:bottom-0 before:w-px before:bg-outline-variant/30">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-surface-container-low border border-secondary/30 flex items-center justify-center z-10">
+<span class="text-secondary text-[10px] font-bold">2</span>
+</div>
+<h4 class="font-body font-semibold text-on-surface mb-2">Go to ER now</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Transport the victim to the nearest medical facility immediately. Do not wait for symptoms to develop. Antivenom is most effective when administered early.
+                        </p>
+</div>
+<!-- Section 3 -->
+<div class="relative pl-6">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-error-container/20 border border-error/30 flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-error text-[12px]">close</span>
+</div>
+<h4 class="font-body font-semibold text-error mb-2">What NOT to do</h4>
+<ul class="space-y-3 font-body text-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-error mt-0.5">block</span>
+<span>Do NOT apply a tourniquet.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-error mt-0.5">block</span>
+<span>Do NOT attempt to cut the wound or suck out the venom.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-error mt-0.5">block</span>
+<span>Do NOT apply ice or submerge the bite in water.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex gap-4 pt-4 pb-5">
+<button class="flex-1 bg-surface-container-low border border-outline-variant/12 hover:bg-surface-bright transition-colors rounded-full py-4 px-6 flex items-center justify-center gap-2 text-on-surface font-body font-medium text-sm">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                Save Report
+            </button>
+<button class="flex-1 bg-surface-container-low border border-outline-variant/12 hover:bg-surface-bright transition-colors rounded-full py-4 px-6 flex items-center justify-center gap-2 text-on-surface font-body font-medium text-sm">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                Share Alert
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-[#071325]/80 backdrop-blur-2xl border-t border-[#3c4a43]/12 fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 md:hidden">
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 transition-all scale-98 hover:scale-100 duration-300" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">grid_view</span>
+<span class="font-['Manrope'] font-semibold text-[10px] tracking-widest">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#00C896]/10 text-[#42e5b0] rounded-full px-6 py-2 scale-98 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]" data-weight="fill">center_focus_strong</span>
+<span class="font-['Manrope'] font-semibold text-[10px] tracking-widest text-[#42e5b0]">SCANNER</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-60 hover:opacity-100 transition-all scale-98 hover:scale-100 duration-300" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px]">description</span>
+<span class="font-['Manrope'] font-semibold text-[10px] tracking-widest">REPORTS</span>
+</a>
+</nav>
+</body></html>

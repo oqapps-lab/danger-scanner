@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analyzing - Danger Scanner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#00c896",
+                    "secondary-fixed-dim": "#ffb86b",
+                    "tertiary-container": "#ff9289",
+                    "inverse-primary": "#006c4f",
+                    "on-primary-container": "#004d38",
+                    "outline-variant": "#3c4a43",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "primary-fixed-dim": "#3adfab",
+                    "on-error": "#690005",
+                    "primary": "#42e5b0",
+                    "surface-dim": "#071325",
+                    "on-surface-variant": "#bbcac1",
+                    "on-secondary-fixed": "#2c1700",
+                    "on-secondary-fixed-variant": "#683d00",
+                    "on-tertiary-fixed-variant": "#930011",
+                    "on-surface": "#d7e3fc",
+                    "error-container": "#93000a",
+                    "on-primary-fixed": "#002116",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#cf7e02",
+                    "background": "#071325",
+                    "on-background": "#d7e3fc",
+                    "tertiary-fixed": "#ffdad6",
+                    "surface-container-low": "#101c2e",
+                    "secondary": "#ffb86b",
+                    "primary-fixed": "#60fcc6",
+                    "surface-tint": "#3adfab",
+                    "surface-container-high": "#1f2a3d",
+                    "surface-variant": "#2a3548",
+                    "surface-container-lowest": "#030e20",
+                    "on-secondary-container": "#3f2300",
+                    "outline": "#85948c",
+                    "surface-container-highest": "#2a3548",
+                    "surface-container": "#142032",
+                    "on-tertiary-fixed": "#410003",
+                    "on-primary": "#003828",
+                    "inverse-surface": "#d7e3fc",
+                    "tertiary": "#ffbbb5",
+                    "surface-bright": "#2e394d",
+                    "on-tertiary": "#680009",
+                    "surface": "#071325",
+                    "on-secondary": "#492900",
+                    "on-primary-fixed-variant": "#00513b",
+                    "secondary-fixed": "#ffdcbc",
+                    "on-tertiary-container": "#8c0010",
+                    "inverse-on-surface": "#253144",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Ambient Glow / Pathogen Bloom Effect -->
+<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+<div class="w-96 h-96 bg-primary opacity-5 rounded-full blur-[64px]"></div>
+<div class="w-64 h-64 bg-primary-container opacity-10 rounded-full blur-[48px] absolute"></div>
+</div>
+<!-- Top Navigation (Minimal for Focused View) -->
+<div class="w-full max-w-md px-6 py-4 flex items-center justify-between z-10 sticky top-0 bg-surface/80 backdrop-blur-xl">
+<button class="text-on-background hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-lg font-headline font-bold text-on-background">Analyzing</h1>
+<div class="w-10"></div> <!-- Spacer for alignment -->
+</div>
+<!-- Main Content Area -->
+<main class="w-full max-w-md flex-1 flex flex-col px-6 pb-8 z-10 relative">
+<!-- Visual Core: Thumbnail and Pulse -->
+<div class="flex-1 flex flex-col items-center justify-center min-h-[300px] relative mt-8 mb-12">
+<!-- Static "Pulse" rings -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-48 h-48 rounded-full border border-primary/20 absolute"></div>
+<div class="w-64 h-64 rounded-full border border-primary/10 absolute"></div>
+<div class="w-80 h-80 rounded-full border border-primary/5 absolute"></div>
+</div>
+<div class="relative z-10 w-32 h-32 rounded-full border-4 border-surface-container-highest shadow-[0_0_32px_rgba(66,229,176,0.15)] overflow-hidden bg-surface-container-low">
+<img alt="Specimen Analysis" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" data-alt="Macro photography of a large brown spider on a dark textured leaf, illuminated by clinical cool blue and sterile green medical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoCVuJmCtBIigrxM4IfSP7n0m9P-F1LJhbpIESUxUCCwUvNBioZo3YnnmaVyRoCDldre-Tk17DYBoaftYL3iYSUJFaRyW-v9R2hkXgxHXwQAEEnG1QQKJiymCUz_mM7G6V3F8qsWuYio5OSrdDshRXeN1scHna7aHY1QjrEej9wa69uETmMFVRoFw5u5OlbhszbMomEi1N0_4wNeOwoNzr23XkaEBv-z9LkgG_ZSgIkoJvt_oz-HAdYYma-HLE1JOdxAsNPAwQmA"/>
+<!-- Scanning line overlay -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary shadow-[0_0_8px_#42e5b0] animate-[scan_2s_ease-in-out_infinite]"></div>
+</div>
+<div class="mt-8 text-center flex flex-col gap-2">
+<h2 class="text-2xl font-headline font-bold text-on-background">Analyzing Target</h2>
+<p class="text-on-surface-variant text-sm font-label">Stand by for threat assessment</p>
+</div>
+</div>
+<!-- Progress Checklist Area -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col gap-5 relative overflow-hidden">
+<!-- Glassmorphism subtle overlay -->
+<div class="absolute inset-0 bg-surface-bright/5 backdrop-blur-[2px] pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<!-- Step 1 -->
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<p class="text-on-background font-body text-sm">Photo received</p>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<p class="text-on-background font-body text-sm">Category: spider</p>
+</div>
+<!-- Step 3 (In Progress) -->
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 border border-outline-variant/30">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</div>
+<p class="text-on-background font-body text-sm font-medium">Assessing threat level...</p>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="relative z-10 mt-2 flex flex-col gap-2">
+<div class="flex justify-between items-center text-xs font-label">
+<span class="text-on-surface-variant">Analysis Progress</span>
+<span class="text-primary font-medium">66%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full" style="width: 66%;"></div>
+</div>
+<p class="text-on-surface-variant text-xs mt-1">Processing biological signatures...</p>
+</div>
+</div>
+<!-- Footer / Social Proof -->
+<div class="mt-8 text-center">
+<p class="text-on-surface-variant text-xs font-label opacity-70">247,391 dangers identified worldwide</p>
+</div>
+</main>
+<style>
+        /* Fallback keyframes since animations aren't supported via classes without config extension */
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+    </style>
+</body></html>
